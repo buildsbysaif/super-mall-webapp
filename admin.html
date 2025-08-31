@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Super Mall</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    
+    <section id="login-section">
+        <div class="login-container">
+            <div class="login-header">
+                <div class="logo">SuperMall</div>
+                <p>Administration Panel</p>
+            </div>
+
+            <form id="login-form">
+                <h2>Admin Login</h2>
+                <div class="form-group">
+                    <input type="email" id="login-email" class="form-input" placeholder=" " required>
+                    <label for="login-email" class="form-label">Email</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="login-password" class="form-input" placeholder=" " required>
+                    <label for="login-password" class="form-label">Password</label>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </section>
+
+    <div id="admin-dashboard-container" class="hidden">
+        <header>
+            <div class="logo">SuperMall</div>
+            <p>Administration Panel</p>
+        </header>
+
+        <main>
+            <section id="admin-dashboard">
+                <div class="admin-header">
+                    <h2>Dashboard</h2>
+                    <button id="logout-button">Logout</button>
+                </div>
+                
+                <div id="status-message"></div>
+
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <h4>Total Shops</h4>
+                        <p id="total-shops">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Total Categories</h4>
+                        <p id="total-categories">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Total Floors</h4>
+                        <p id="total-floors">0</p>
+                    </div>
+                </div>
+
+                <div class="management-grid">
+                    <div class="management-section">
+                        <h3>Manage Categories & Floors</h3>
+                        <form id="category-form">
+                            <input type="text" id="category-name" placeholder="New Category" required>
+                            <button type="submit">Add Category</button>
+                        </form>
+                        <form id="floor-form">
+                            <input type="text" id="floor-name" placeholder="New Floor" required>
+                            <button type="submit">Add Floor</button>
+                        </form>
+                    </div>
+
+                    <div class="management-section">
+                        <h3>Create a New Shop</h3>
+                        <form id="create-shop-form">
+                            <input type="text" id="shop-name" placeholder="Shop Name" required>
+                            <select id="shop-category" required><option>Select Category</option></select>
+                            <select id="shop-floor" required><option>Select Floor</option></select>
+                            <button type="submit">Create Shop</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="management-section">
+                    <h3>Manage Existing Shops</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Shop Name</th>
+                                <th>Category</th>
+                                <th>Floor</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="shops-table-body">
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Super Mall Application. All Rights Reserved.</p>
+        </footer>
+    </div>
+    
+    <div id="offer-modal" class="modal-container hidden">
+        <div class="modal-content">
+            <button class="modal-close-btn">&times;</button>
+            <h3 id="offer-modal-title">Manage Offers for...</h3>
+            <div id="existing-offers-list"></div>
+            <hr>
+            <h4>Add a New Offer</h4>
+            <form id="add-offer-form">
+                <input type="text" id="offer-text" placeholder="New offer description" required>
+                <button type="submit">Add Offer</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
