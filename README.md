@@ -46,6 +46,6 @@ A modern, feature-rich web portal for a Super Mall, allowing an administrator to
 
 ## How to Run Locally
 
-1.  Clone the repository: `git clone https://github.com/buildsbysaif/super-mall-webapp`
+1.  Clone the repository: `git clone https://github.com/buildsbysaif/super-mall-webapp.git`
 2.  Install the "Live Server" extension in VS Code.
 3.  Right-click on `index.html` and select "Open with Live Server".
